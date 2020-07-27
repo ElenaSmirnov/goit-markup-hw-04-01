@@ -185,8 +185,6 @@ p {
   padding-bottom: 94px;
 }
 .section-features {
-  padding: 0;
-  margin: 0;
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -302,6 +300,7 @@ p {
   position: relative;
   display: flex;
 }
+
 .features-list .title {
   padding-bottom: 10px;
   font-weight: bold;
@@ -322,12 +321,14 @@ p {
   align-items: center;
 }
 
-.features-list-item {
+/*.features-list-item {
   width: 270px;
   height: 120px;
-}
+}*/
 .features-list-item-link {
   display: flex;
+  width: 270px;
+  height: 120px;
   background-color: var(--secondary-white-color);
   justify-content: center;
   align-items: center;
