@@ -85,11 +85,12 @@ p {
 
 .header {
   display: block;
+  border-bottom: 1px solid #ececec;
 }
 
-.header-portfolio {
+/*.header-portfolio {
   padding-bottom: 93px;
-}
+}*/
 
 .header .container {
   display: flex;
@@ -163,10 +164,12 @@ p {
   border-radius: 2px;
   margin-top: 28px;
   opacity: 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.site-nav-list-item-link:hover::after,
-.site-nav-list-item-link:focus::after {
+/*.site-nav-list-item-link:hover::after,*/
+.site-nav-list-item .site-nav-list-item-link:active:after {
+  background-color: var(--accent-color);
   opacity: 1;
 }
 .site-nav {
@@ -181,19 +184,24 @@ p {
   letter-spacing: 0.02em;
   color: var(--title-text-color);
   list-style: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.site-nav-list .link:hover,
-.site-nav-list .link:focus {
+.site-nav-list-item /*.link*/:hover,
+.site-nav-list-item /*.link*/:focus {
   color: var(--accent-color);
 }
 
+/*.active-list-item {
+  color: var(--accent-color);
+}*/
 .contacts-list .link {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail-smartphone-icon {
@@ -275,6 +283,7 @@ p {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section-hero .button:hover,
@@ -300,9 +309,14 @@ p {
   margin-right: auto;
 }
 
+.section-portfolio {
+  padding-top: 93px;
+}
+
 .filter-groups .button {
   display: block;
   border-radius: 4px;
+  box-shadow: none;
   min-width: 136px;
   margin-left: auto;
   margin-right: auto;
@@ -320,13 +334,18 @@ p {
 
   letter-spacing: 0.03em;
   color: var(--title-text-color);
-  background-color: var(--accent-color);
-  border-color: var(--primary-white-color);
+  background-color: var(--secondary-white-color);
+  border-color: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .filter-groups .button:hover,
 .filter-groups .button:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 3px 1px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
 }
 
 .image {
@@ -471,6 +490,7 @@ p {
 
 .social-list-item {
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 .social-list-item-link {
@@ -481,6 +501,7 @@ p {
   border-radius: 50%;
   width: 44px;
   height: 44px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-item:hover,
@@ -497,6 +518,11 @@ p {
 .subscribe-list .social-list-item {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-list-item-icon {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .subscribe-list .social-list-item:hover,
@@ -536,31 +562,13 @@ p {
   align-items: center;
 }
 
-.filter-groups .button {
-  border-radius: 4px;
-  border: none;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.6;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--title-text-color);
-  background-color: var(--secondary-white-color);
-}
-
-.filter-groups .button:hover,
-.filter-groups .button:focus {
-  color: var(--primary-white-color);
-  background-color: var(--accent-color);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 3px 1px rgba(0, 0, 0, 0.1);
-}
-
 .filter-groups .button:active {
   background: var(--accent-color);
-  border: none;
   border-radius: 4px;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+
 .projects-flex-element {
   border: 1px solid #eeeeee;
   box-sizing: border-box;
@@ -571,6 +579,7 @@ p {
   margin-bottom: 30px;
   overflow: hidden;
 }
+
 .projects-flex-element:hover,
 .projects-flex-element:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -679,6 +688,7 @@ p {
   color: var(--primary-white-color);
   margin-bottom: 20px;
 }
+
 .footer-contacts {
   padding-top: 20px;
 }
@@ -700,6 +710,7 @@ p {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-follow-us-icon::after {
